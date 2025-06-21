@@ -99,6 +99,15 @@ class HipotecaCalculator {
       input.addEventListener('blur', function () {
         handleFocus.call(this, false);
       });
+
+      //Mouseenter
+      input.addEventListener('mouseenter', function () {
+        handleFocus.call(this, true);
+      });
+      //Mousedown
+      input.addEventListener('mouseout', function () {
+        handleFocus.call(this, false);
+      });
     });
 
     // Evento no formulário
