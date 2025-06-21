@@ -78,7 +78,7 @@ form {
   margin: 0 20px;
 }
 
-input[type='number'] {
+.vazio {
   width: 100%;
   background-color: #fff;
   color: #133040;

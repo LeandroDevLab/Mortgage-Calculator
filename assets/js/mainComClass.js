@@ -21,7 +21,8 @@ class HipotecaCalculator {
 
   // Método para calcular a hipoteca
   calcularRepayment() {
-    const hipoteca = parseFloat(this.mAmount.value);
+    const valor = this.mAmount.value;
+    const hipoteca = parseFloat(valor.replace(/,/g, '')); //retira a vírgula
     const taxa = parseFloat(this.mTermP.value) / 12 / 100;
     const prazo = parseFloat(this.mTermY.value) * 12;
     const dividendo = taxa * (1 + taxa) ** prazo;
@@ -30,7 +31,8 @@ class HipotecaCalculator {
   }
 
   calcularInterestOnly() {
-    const hipoteca = parseFloat(this.mAmount.value);
+    const valor = this.mAmount.value;
+    const hipoteca = parseFloat(valor.replace(/,/g, '')); //retira a vírgula
     const taxa = parseFloat(this.mTermP.value) / 12 / 100;
     return hipoteca * taxa;
   }
@@ -85,7 +87,7 @@ class HipotecaCalculator {
   // Método de inicialização (onde adicionamos os eventos)
   init() {
     // Evento de Focus
-    document.querySelectorAll('input[type="number"]').forEach(input => {
+    document.querySelectorAll('.vazio').forEach(input => {
       const handleFocus = function (add) {
         const divFocus = this.parentElement;
         divFocus.classList.toggle('focusHoverDiv', add);
