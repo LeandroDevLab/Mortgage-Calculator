@@ -120,6 +120,12 @@ input {
 .c-input {
 }
 
+.input-number {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
 .item1,
 .item2,
 .item3,
@@ -217,24 +223,32 @@ input {
 }
 
 /* FOCUS e HOVER CLASS */
-.focushover {
+.focusHoverDiv {
   border: 1px solid var(--button-color);
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.focusHoverSpan {
   background-color: var(--button-color);
   color: #fff;
 }
 
 /* HOVER e FOCUS */
+/* Chrome, Safari, Edge, Opera */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
 input[type='radio']:focus + label,
-input[type='radio']:focus,
-input[type='number']:focus,
-input[type='number']:hover,
-.b-input:focus,
-.c-input:focus,
-.d-input:focus,
-.b-input:hover,
-.c-input:hover,
-.d-input:hover {
+input[type='radio']:focus {
   border: 1px solid var(--button-color);
   cursor: pointer;
 }

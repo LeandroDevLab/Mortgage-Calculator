@@ -84,6 +84,23 @@ class HipotecaCalculator {
 
   // Método de inicialização (onde adicionamos os eventos)
   init() {
+    // Evento de Focus
+    document.querySelectorAll('input[type="number"]').forEach(input => {
+      const handleFocus = function (add) {
+        const divFocus = this.parentElement;
+        divFocus.classList.toggle('focusHoverDiv', add);
+        divFocus.querySelector('span').classList.toggle('focusHoverSpan', add);
+      };
+      //Get into focus
+      input.addEventListener('focus', function () {
+        handleFocus.call(this, true);
+      });
+      //Get out of focus
+      input.addEventListener('blur', function () {
+        handleFocus.call(this, false);
+      });
+    });
+
     // Evento no formulário
     document
       .getElementById('formularioHipoteca')
