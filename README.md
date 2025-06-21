@@ -41,8 +41,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Repository GitHub](https://github.com/LeandroDevLab/Mortgage-Calculator)
+- Live Site URL: [Deploy GitHub Page](https://leandrodevlab.github.io/Mortgage-Calculator/)
 
 ## My process
 
