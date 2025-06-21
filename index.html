@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- BootStrap Icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <title>Frontend Mentor | Mortgage repayment calculator</title>
+  </head>
+  <body>
+    <section class="container">
+      <div class="ladoBranco">
+        <div class="header">
+          <h1>Mortgage Calculator</h1>
+          <button class="limpar" aria-label="Form wipe">Clear all</button>
+        </div>
+        <form id="formularioHipoteca" action="" class="grid-container">
+          <div class="item1">
+            <label for="amount">Mortgage Amount</label>
+            <div class="b-input conjunto">
+              <span class="unidade">£</span>
+              <!-- step="0.01" para aceitar valores fracionados -->
+              <input
+                id="amount"
+                class="mAmount vazio"
+                type="number"
+                step="0.01"
+              />
+            </div>
+          </div>
+
+          <div class="item2">
+            <label for="mortgageTerm">Mortgage Term</label>
+            <div class="c-input conjunto">
+              <input
+                id="mortgageTerm"
+                class="mTermY vazio"
+                type="number"
+                step="1"
+              />
+              <span class="unidade">years</span>
+            </div>
+          </div>
+
+          <div class="item3">
+            <label for="interestRate">Interest Rate</label>
+            <div class="c-input conjunto">
+              <input
+                id="interestRate"
+                class="mTermP vazio"
+                type="number"
+                step="0.01"
+              />
+              <span class="unidade">%</span>
+            </div>
+          </div>
+
+          <div class="item4">
+            <p>Mortgage Type</p>
+            <div class="d-input">
+              <input id="repayment" type="radio" name="escolha" value="R" />
+              <label for="repayment">Repayment</label>
+            </div>
+            <div id="mortgage-type" class="d-input">
+              <input id="interestOnly" type="radio" name="escolha" value="IO" />
+              <label for="interestOnly">Interest Only</label>
+            </div>
+          </div>
+
+          <div class="item5">
+            <button class="calcular" type="submit">
+              <i id="calculadora" class="bi bi-calculator-fill"></i>
+              Calculate Repayments
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="ladoAzul">
+        <!-- Empty results start -->
+        <div class="pre-results">
+          <img
+            src="./assets/images/illustration-empty.svg"
+            alt="ilustração de calculadora e calculos"
+          />
+          <h1>Results shown here</h1>
+          <p>
+            Complete the form and click “calculate repayments” to see what your
+            monthly repayments would be.
+          </p>
+        </div>
+        <div class="results">
+          <div class="internal-results">
+            <h1>Your results</h1>
+            <p>
+              Your results are shown below based on the information you
+              provided. To adjust the results, edit the form and click
+              "calculate repayments" again.
+            </p>
+            <div class="div_valores">
+              <div id="div_parcela">
+                <p>Your monthly repayments</p>
+                <h1 id="parcela">£ ---</h1>
+              </div>
+              <div>
+                <p>Total you'll repay over the term</p>
+                <h3 id="acumulado">£ ---</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by
+      <a href="https://github.com/LeandroDevLab" target="_blank"
+        >Leandro Ribeiro - LeandroDevLab</a
+      >.
+    </div>
+
+    <script src="./assets/js/mainComClass.js" defer></script>
+  </body>
+</html>
