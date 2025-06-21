@@ -54,7 +54,7 @@ class HipotecaCalculator {
     });
   }
 
-  chanceResultsDisplay() {
+  changeResultsStyle() {
     this.displayPre.style.display = 'none';
     this.displayPos.style.display = 'block';
   }
@@ -134,7 +134,7 @@ class HipotecaCalculator {
       .getElementById('formularioHipoteca')
       .addEventListener('submit', event => {
         event.preventDefault();
-
+        let valid = true;
         //limpando os erros
         this.limparErro();
 
@@ -161,6 +161,7 @@ class HipotecaCalculator {
             //Primeiro eu pego o elemento pai (campo.parentElement),
             //depois o elemento filho (.querySelector('span')), nesse caso o Span
             parentSpan.classList.add('error-value');
+            valid = false;
           } else {
             campo.parentElement.classList.remove('error-value');
             parentSpan.classList.remove('error-value');
@@ -171,6 +172,7 @@ class HipotecaCalculator {
           //console.log('cheguei aqui');
           const mortgageType = document.querySelector('#mortgage-type');
           this.createError(mortgageType, this.errorMsg);
+          valid = false;
         }
 
         if (radioChecked.value === 'R') {
@@ -192,7 +194,8 @@ class HipotecaCalculator {
             this.calcularInterestOnly() * (parseFloat(this.mTermY.value) * 12)
           );
         }
-        this.chanceResultsDisplay();
+
+        if (valid) this.changeResultsStyle();
         this.clearButton.focus();
       });
 
