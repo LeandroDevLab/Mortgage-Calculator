@@ -247,18 +247,6 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
-input[type='radio']:focus + label,
-input[type='radio']:focus {
-  border: 1px solid var(--button-color);
-  cursor: pointer;
-}
-
-span:focus,
-span:hover {
-  background-color: var(--button-color);
-  color: var(--background-color-primary);
-}
-
 /* STYLE ACTIVE RADIO */
 .radio-active {
   background-color: #dada373d;

@@ -110,6 +110,25 @@ class HipotecaCalculator {
       });
     });
 
+    // Evento de Focus e Hover input Radio
+    document.querySelectorAll('.d-input').forEach(div => {
+      const inputDaDiv = div.querySelector('input');
+
+      inputDaDiv.addEventListener('focus', function () {
+        div.classList.add('focusHoverDiv');
+      });
+      inputDaDiv.addEventListener('blur', function () {
+        div.classList.remove('focusHoverDiv');
+      });
+
+      div.addEventListener('mouseenter', function () {
+        this.classList.add('focusHoverDiv');
+      });
+      div.addEventListener('mouseout', function () {
+        this.classList.remove('focusHoverDiv');
+      });
+    });
+
     // Evento no formulário
     document
       .getElementById('formularioHipoteca')
